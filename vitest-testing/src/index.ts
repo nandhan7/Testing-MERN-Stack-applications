@@ -4,7 +4,7 @@ import { prismaClient } from "./db";
 
 export const app = express();
 app.use(express.json());
-
+console.log("first")
 const sumInput = z.object({
     a: z.number(),
     b: z.number()
@@ -12,7 +12,6 @@ const sumInput = z.object({
 
 app.post("/sum", async (req, res) => {
     const parsedResponse = sumInput.safeParse(req.body)
-    
     if (!parsedResponse.success) {
         return res.status(411).json({
             message: "Incorrect inputs"
