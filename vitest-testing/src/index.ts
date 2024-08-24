@@ -4,7 +4,6 @@ import { prismaClient } from "./db";
 
 export const app = express();
 app.use(express.json());
-console.log("first")
 const sumInput = z.object({
     a: z.number(),
     b: z.number()
